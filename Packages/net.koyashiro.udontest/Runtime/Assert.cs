@@ -306,9 +306,10 @@ namespace Koyashiro.UdonTest
                 case TokenType.Float:
                 case TokenType.Double:
                 case TokenType.String:
-                case TokenType.Reference:
                 case TokenType.Error:
                     return $"DataToken({obj})";
+                case TokenType.Reference:
+                    return $"DataToken({ToDebugString(obj.Reference)})";
                 case TokenType.DataList:
                     return $"DataToken({ToDebugString((DataList)obj)})";
                 case TokenType.DataDictionary:
